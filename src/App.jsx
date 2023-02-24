@@ -5,7 +5,7 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get('http://192.168.10.234:5000/users')
+    axios.get(`${import.meta.env.VITE_API_URL}/users`)
       .then(response => {
         setUsers(response.data);
       })
